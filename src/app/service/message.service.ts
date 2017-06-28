@@ -48,4 +48,11 @@ export class MessageService {
         });
       })
   }
+
+
+  postMessage(obj: any) {
+    this.http.post(this.url, obj).subscribe((response: Response) => {
+      console.log(response.json())
+    })
+  }
 }

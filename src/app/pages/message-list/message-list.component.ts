@@ -28,6 +28,13 @@ export class MessageListComponent implements OnInit {
       this.pageSize = +params['pageSize'];
     });
 
+    if (isNaN(this.pageNumber)) {
+      this.pageNumber = 1;
+    }
+    if (isNaN(this.pageSize)) {
+      this.pageSize = 5;
+    }
+
 
     // this.messageService.getAllMessages()
     this.getMessages();
@@ -79,5 +86,10 @@ export class MessageListComponent implements OnInit {
       this.messages = result;
       this.loading = false;
     });
+  }
+
+  onSubmit(form: any) {
+    console.log('you submitted value:', form);
+    this.messageService.postMessage(form);
   }
 }
