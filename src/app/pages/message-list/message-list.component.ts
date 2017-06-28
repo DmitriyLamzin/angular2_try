@@ -88,8 +88,4 @@ export class MessageListComponent implements OnInit {
     });
   }
 
-  onSubmit(form: any) {
-    console.log('you submitted value:', form);
-    this.messageService.postMessage(form);
-  }
 }

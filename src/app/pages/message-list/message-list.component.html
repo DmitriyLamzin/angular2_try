@@ -12,25 +12,10 @@
         <button (click)="prevPage()">&laquo;</button>
       </li>
       <li>
-        <button href="#" (click)="nextPage()">&raquo;</button>
+        <button (click)="nextPage()">&raquo;</button>
       </li>
     </ul>
   </div>
 </div>
 
-<div class="well">
-  <h4>Leave a Comment:</h4>
-  <form #f="ngForm"
-        (ngSubmit)="onSubmit(f.value)"
-        class="ui form">
-    <div class="form-group">
-      <label for="title">Title</label>
-      <textarea id="title" name="title" class="form-control" rows="1" ngModel></textarea>
-      <label for="message">Message</label>
-      <textarea id="message" name="body" class="form-control" rows="3" ngModel></textarea>
-      <label for="userId">User Id</label>
-      <textarea id="userId" name="userId" class="form-control" rows="1" ngModel></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+<app-message-form></app-message-form>

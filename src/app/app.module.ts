@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   NgModule,
@@ -37,6 +37,7 @@ import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 import {MessageService} from "./service/message.service";
 import {UserService} from "./service/user.service";
+import { MessageFormComponent } from './components/message-form/message-form.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -63,7 +64,8 @@ type StoreType = {
     MessageComponent,
     UserComponent,
     UserListComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    MessageFormComponent
   ],
   /**
    * Import Angular's modules.
@@ -71,6 +73,7 @@ type StoreType = {
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
