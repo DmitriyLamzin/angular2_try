@@ -18,6 +18,10 @@ let PROVIDERS: any[] = [
    */
 ];
 
+export const BASE_URL = "https://jsonplaceholder.typicode.com/";
+export const MESSAGE_API_URL = "posts";
+export const USER_API_URL = "users";
+
 /**
  * Angular debug tools in the dev console
  * https://github.com/angular/angular/blob/86405345b781a9dc2438c0fbe3e9409245647019/TOOLS_JS.md
@@ -35,9 +39,13 @@ if ('production' === ENV) {
 
     return modRef;
   };
+  let BASE_URL = "https://jsonplaceholder.typicode.com/";
+
 
   PROVIDERS = [
     ...PROVIDERS,
+    {provide: BASE_URL, useValue: BASE_URL}
+
     /**
      * Custom providers in production.
      */
@@ -56,11 +64,17 @@ if ('production' === ENV) {
     return modRef;
   };
 
+
   /**
    * Development
    */
   PROVIDERS = [
     ...PROVIDERS,
+    {provide: BASE_URL, useValue: BASE_URL},
+    {provide: MESSAGE_API_URL, useValue: MESSAGE_API_URL},
+    {provide: USER_API_URL, useValue: USER_API_URL},
+
+
     /**
      * Custom providers in development.
      */
@@ -71,5 +85,7 @@ if ('production' === ENV) {
 export const decorateModuleRef = _decorateModuleRef;
 
 export const ENV_PROVIDERS = [
-  ...PROVIDERS
+  ...PROVIDERS,
 ];
+
+

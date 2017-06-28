@@ -1,0 +1,8 @@
+<ul *ngIf="!loading">
+  <li *ngFor="let message of messages"  [class.selected]="isSelected(message)" (click)="setSelected(message.id); isSelected(message)">
+    <app-message [message]="message"></app-message>
+  </li>
+</ul>
+<p *ngIf="loading">...loading</p>
+<button (click)="prevPage()">prev page</button>
+<button (click)="nextPage()">next page</button>

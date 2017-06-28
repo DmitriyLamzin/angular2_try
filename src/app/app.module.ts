@@ -27,16 +27,23 @@ import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
+import { MessageListComponent } from './pages/message-list/message-list.component';
+import { MessageComponent } from './components/message/message.component';
+import { UserComponent } from './components/user/user.component';
+import { UserListComponent } from './pages/user-list/user-list.component';
+import { UserDetailComponent } from './pages/user-detail/user-detail.component';
+import {MessageService} from "./service/message.service";
+import {UserService} from "./service/user.service";
 
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState,
 ];
+
 
 type StoreType = {
   state: InternalStateType,
@@ -51,10 +58,12 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
-    HomeComponent,
     NoContentComponent,
-    XLargeDirective
+    MessageListComponent,
+    MessageComponent,
+    UserComponent,
+    UserListComponent,
+    UserDetailComponent
   ],
   /**
    * Import Angular's modules.
@@ -70,7 +79,9 @@ type StoreType = {
    */
   providers: [
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    MessageService,
+    UserService
   ]
 })
 export class AppModule {
