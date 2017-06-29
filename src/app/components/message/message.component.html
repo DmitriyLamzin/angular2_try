@@ -1,5 +1,10 @@
 <div>
-<app-user [id]="message.userId"></app-user>
+  <p>User Id:
+    <a data-toggle="pill" [routerLink]=" ['/users', message.userId] " >
+      {{ message.userId }}
+  </a>
+  </p>
+<p>user id : {{ message.userId }}</p>
 <p>message id : {{ message.id }}</p>
 <p>title : {{ message.title }}</p>
 <p>{{ message.body }}</p>

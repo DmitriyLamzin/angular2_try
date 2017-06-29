@@ -1,1 +1,9 @@
-<p> {{ user.name }} </p>
+<h3 align="center">user info</h3>
+<div class="jumbotron" *ngIf="!loading">
+  <p>id : {{ user.id }}</p>
+  <p>name : {{ user.name }}</p>
+  <p>nickname : {{ user.username }}</p>
+  <p>address</p>
+  <app-address [address]="user.address"></app-address>
+  <p>phone : {{ user.phone }}</p>
+</div>

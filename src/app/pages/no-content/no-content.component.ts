@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
   template: `
     <div>
       <h1>404: page missing</h1>
+      <a data-toggle="pill" [routerLink]=" ['/users', 1] " >
+        CLICK
+      </a>
     </div>
   `
 })

@@ -24,11 +24,11 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { NoContentComponent } from './no-content';
+import { NoContentComponent } from './pages/no-content';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
-import { MessageListComponent } from './pages/message-list/message-list.component';
+import { MessageListComponent } from './components/message-list/message-list.component';
 import { MessageComponent } from './components/message/message.component';
 import { UserComponent } from './components/user/user.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
@@ -36,6 +36,8 @@ import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 import {MessageService} from "./service/message.service";
 import {UserService} from "./service/user.service";
 import { MessageFormComponent } from './components/message-form/message-form.component';
+import { AddressComponent } from './components/address/address.component';
+import { MessagesComponent } from './pages/messages/messages.component';
 // require("!style!css!bootstrap/dist/css/bootstrap.css");
 
 // Application wide providers
@@ -63,7 +65,9 @@ type StoreType = {
     UserComponent,
     UserListComponent,
     UserDetailComponent,
-    MessageFormComponent
+    MessageFormComponent,
+    AddressComponent,
+    MessagesComponent
   ],
   /**
    * Import Angular's modules.

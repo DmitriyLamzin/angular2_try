@@ -1,3 +1,13 @@
-<p>
-  user-detail works!
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <app-user [id]="id" ></app-user>
+  </div>
+  <div class="col-md-8">
+    <app-message-list [userId]="id" class=""></app-message-list>
+  </div>
+
+</div>
+
+<a data-toggle="pill" [routerLink]=" ['/messages']" [queryParams]= "{ userId: id } ">
+  users messages
+</a>
